@@ -97,59 +97,59 @@ namespace Caffe
 
         private void Calculation_Click(object sender, RoutedEventArgs e)
         {
-            Cheque newcheque = new(sales.OpenCheque());
-            newcheque.RegisterChequeItem(((TextBlock)SelectFuel.SelectedItem).Text, _FuelPrice, _TotalLitres, _FuelPrice * _TotalLitres);
+            sales.OpenCheque();
+            sales.RegisterChequeItem(((TextBlock)SelectFuel.SelectedItem).Text, _FuelPrice, _TotalLitres, _FuelPrice * _TotalLitres);
             if (Check01.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods01.Text, Convert.ToDouble(Price01.Text), 1, Convert.ToDouble(Price01.Text));
+                sales.RegisterChequeItem(Goods01.Text, Convert.ToDouble(Price01.Text), 1, Convert.ToDouble(Price01.Text));
                 Check01.IsChecked = false;
             }                
             if (Check02.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods02.Text, Convert.ToDouble(Price02.Text), 1, Convert.ToDouble(Price02.Text));
+                sales.RegisterChequeItem(Goods02.Text, Convert.ToDouble(Price02.Text), 1, Convert.ToDouble(Price02.Text));
                 Check02.IsChecked = false;
             }                
             if (Check03.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods03.Text, Convert.ToDouble(Price03.Text), 1, Convert.ToDouble(Price03.Text));
+                sales.RegisterChequeItem(Goods03.Text, Convert.ToDouble(Price03.Text), 1, Convert.ToDouble(Price03.Text));
                 Check03.IsChecked = false;
             }                
             if (Check04.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods04.Text, Convert.ToDouble(Price04.Text), 1, Convert.ToDouble(Price04.Text));
+                sales.RegisterChequeItem(Goods04.Text, Convert.ToDouble(Price04.Text), 1, Convert.ToDouble(Price04.Text));
                 Check04.IsChecked = false;
             }                
             if (Check05.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods05.Text, Convert.ToDouble(Price05.Text), 1, Convert.ToDouble(Price05.Text));
+                sales.RegisterChequeItem(Goods05.Text, Convert.ToDouble(Price05.Text), 1, Convert.ToDouble(Price05.Text));
                 Check05.IsChecked = false;
             }
             if (Check06.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods06.Text, Convert.ToDouble(Price06.Text), 1, Convert.ToDouble(Price06.Text));
+                sales.RegisterChequeItem(Goods06.Text, Convert.ToDouble(Price06.Text), 1, Convert.ToDouble(Price06.Text));
                 Check06.IsChecked = false;
             }
             if (Check07.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods07.Text, Convert.ToDouble(Price07.Text), 1, Convert.ToDouble(Price07.Text));
+                sales.RegisterChequeItem(Goods07.Text, Convert.ToDouble(Price07.Text), 1, Convert.ToDouble(Price07.Text));
                 Check07.IsChecked = false;
             }
             if (Check08.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods08.Text, Convert.ToDouble(Price08.Text), 1, Convert.ToDouble(Price08.Text));
+                sales.RegisterChequeItem(Goods08.Text, Convert.ToDouble(Price08.Text), 1, Convert.ToDouble(Price08.Text));
                 Check08.IsChecked = false;
             }
             if (Check09.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods09.Text, Convert.ToDouble(Price09.Text), 1, Convert.ToDouble(Price09.Text));
+                sales.RegisterChequeItem(Goods09.Text, Convert.ToDouble(Price09.Text), 1, Convert.ToDouble(Price09.Text));
                 Check09.IsChecked = false;
             }
             if (Check10.IsChecked == true)
             {
-                newcheque.RegisterChequeItem(Goods10.Text, Convert.ToDouble(Price10.Text), 1, Convert.ToDouble(Price10.Text));
+                sales.RegisterChequeItem(Goods10.Text, Convert.ToDouble(Price10.Text), 1, Convert.ToDouble(Price10.Text));
                 Check10.IsChecked = false;
             }
-            sales.CloseCheque(newcheque);
+            sales.CloseCheque();
             _TotalCash = sales.GetDayCash();
             ClearAllFuel(0);
             TotalCash.Text = Convert.ToString(_TotalCash);

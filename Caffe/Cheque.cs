@@ -28,7 +28,7 @@ namespace Caffe
         public Cheque(int number)
         {
             _summ = 0;
-            _number = _number;
+            _number = number;
             _cheque = new List<SaleItem>();
         }
     }
