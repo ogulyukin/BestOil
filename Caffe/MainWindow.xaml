@@ -9,22 +9,22 @@
     <Grid Background="Aqua">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.9*"/>
             <RowDefinition Height="2.0*"/>
-            <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="1.2*"/>
-            <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="0.9*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
@@ -37,59 +37,61 @@
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="Static01" Text="Выберите топливо" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"/>
-        <TextBlock x:Name="Static02" Text="Цена" Grid.Row="1" Grid.Column="3" TextAlignment="Center"/>
+        <TextBlock x:Name="Static02" Text="Цена, руб" Grid.Row="1" Grid.Column="3" TextAlignment="Center"/>
         <ComboBox x:Name="SelectFuel" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="SelectFuel_SelectionChanged">
-            <TextBlock x:Name="One" Text="АИ95" TextAlignment="Center" FontSize="24"/>
-            <TextBlock x:Name="Two" Text="АИ92" TextAlignment="Center" FontSize="24"/>
-            <TextBlock x:Name="Three" Text="ДТ" TextAlignment="Center" FontSize="24"/>
+            <TextBlock x:Name="Fuel00" Text="Ошибка чтения файла" TextAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="Fuel01" Text="Ошибка чтения файла" TextAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="Fuel02" Text="Ошибка чтения файла" TextAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="Fuel03" Text="Ошибка чтения файла" TextAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="Fuel04" Text="Ошибка чтения файла" TextAlignment="Center" FontSize="20"/>
         </ComboBox>
-        <TextBlock x:Name="FuelPrice" Text="Здесь будет цена" Grid.Row="2" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="FuelPrice" Text="0" Grid.Row="2" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <TextBlock x:Name="Static03" Text="Литры" Grid.Row="3" Grid.Column="1" TextAlignment="Center"/>
         <TextBlock x:Name="Static04" Text="Сумма" Grid.Row="3" Grid.Column="2" TextAlignment="Center"/>
         <TextBlock x:Name="Static05" Text="Оплата Литров" Grid.Row="3" Grid.Column="3" TextAlignment="Center"/>
         <TextBlock x:Name="Static06" Text="Оплата Суммой" Grid.Row="3" Grid.Column="4" TextAlignment="Center"/>
-        <TextBox x:Name="Litres" Grid.Row="4" Grid.Column="1" TextAlignment="Center" FontSize="24" TextChanged="Litres_TextChanged_1"/>
-        <TextBox x:Name="FuelSumm" Grid.Row="4" Grid.Column="2" TextAlignment="Center" FontSize="24" TextChanged="FuelSumm_TextChanged_1"/>
+        <TextBox x:Name="Litres" Grid.Row="4" Grid.Column="1" TextAlignment="Center" FontSize="22" TextChanged="Litres_TextChanged_1"/>
+        <TextBox x:Name="FuelSumm" Grid.Row="4" Grid.Column="2" TextAlignment="Center" FontSize="22" TextChanged="FuelSumm_TextChanged_1"/>
         <CheckBox x:Name ="chooseLitres" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="ChooseLitres_Checked"/>
         <CheckBox x:Name ="chooseSumm" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="ChooseSumm_Checked"/>
         <TextBlock x:Name="Static07" Text="Наименование" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"/>
         <TextBlock x:Name="Static08" Text="Цена, руб." Grid.Row="5" Grid.Column="3" TextAlignment="Center"/>
-        <TextBlock x:Name="Goods01" Text="Сигареты 1 п. в ассортименте." Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price01" Text="150" Grid.Row="6" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods01" Text="Ошибка чтения файла" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price01" Text="0" Grid.Row="6" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check01" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods02" Text="Шоколад плитка в ассортименте." Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price02" Text="100" Grid.Row="7" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods02" Text="Ошибка чтения файла" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price02" Text="0" Grid.Row="7" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check02" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods03" Text="Кофе натуральный 1 порция" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price03" Text="200" Grid.Row="8" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods03" Text="Ошибка чтения файла" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price03" Text="0" Grid.Row="8" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check03" Grid.Row="8" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods04" Text="Кофе эспрессо 1 порция" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price04" Text="150" Grid.Row="9" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods04" Text="Ошибка чтения файла" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price04" Text="0" Grid.Row="9" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check04" Grid.Row="9" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods05" Text="Хотдог 1 шт." Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price05" Text="120" Grid.Row="10" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods05" Text="Ошибка чтения файла" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price05" Text="0" Grid.Row="10" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check05" Grid.Row="10" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods06" Text="Хотдог 1 шт." Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price06" Text="120" Grid.Row="11" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods06" Text="Ошибка чтения файла" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price06" Text="0" Grid.Row="11" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check06" Grid.Row="11" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods07" Text="Хотдог 1 шт." Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price07" Text="120" Grid.Row="12" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods07" Text="Ошибка чтения файла" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price07" Text="0" Grid.Row="12" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check07" Grid.Row="12" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods08" Text="Хотдог 1 шт." Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price08" Text="120" Grid.Row="13" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods08" Text="Ошибка чтения файла" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price08" Text="0" Grid.Row="13" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check08" Grid.Row="13" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods09" Text="Хотдог 1 шт." Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price09" Text="120" Grid.Row="14" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods09" Text="Ошибка чтения файла" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price09" Text="0" Grid.Row="14" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check09" Grid.Row="14" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Goods10" Text="Хотдог 1 шт." Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="Price10" Text="120" Grid.Row="15" Grid.Column="3" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="Goods10" Text="Ошибка чтения файла" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="Price10" Text="0" Grid.Row="15" Grid.Column="3" TextAlignment="Center" FontSize="22"/>
         <CheckBox x:Name ="Check10" Grid.Row="15" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="Goods_Checked" Unchecked="Goods_Unchecked"/>
-        <TextBlock x:Name="Static19" Text="Общая Сумма:" Grid.Row="16" Grid.Column="1" TextAlignment="Center"/>
+        <TextBlock x:Name="Static19" Text="Ошибка чтения файла" Grid.Row="16" Grid.Column="1" TextAlignment="Center"/>
         <TextBlock x:Name="Static20" Text="топлво к выдаче:" Grid.Row="16" Grid.Column="2" TextAlignment="Center"/>
         <TextBlock x:Name="Static21" Text="Продажи за смену" Grid.Row="16" Grid.Column="4" TextAlignment="Center"/>
-        <TextBlock x:Name="TotalSumm" Text="0.00" Grid.Row="17" Grid.Column="1" TextAlignment="Center" FontSize="24"/>
-        <TextBlock x:Name="TotalLitres" Text="0.00" Grid.Row="17" Grid.Column="2" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="TotalSumm" Text="0.00" Grid.Row="17" Grid.Column="1" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="TotalLitres" Text="0.00" Grid.Row="17" Grid.Column="2" TextAlignment="Center" FontSize="22"/>
         <Button x:Name="Calculation" Content="Оформить покупку" Grid.Row="17" Grid.Column="3" FontSize="14" Click="Calculation_Click"/>
-        <TextBlock x:Name="TotalCash" Text="0.00" Grid.Row="17" Grid.Column="4" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="TotalCash" Text="0.00" Grid.Row="17" Grid.Column="4" TextAlignment="Center" FontSize="22"/>
     </Grid>
 </Window>
