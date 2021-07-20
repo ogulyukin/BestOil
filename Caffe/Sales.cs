@@ -11,6 +11,7 @@ namespace Caffe
         private List<Cheque> _sales;
         private bool isCheckOpen;
         int number;
+        Cheque currentCheque;
         public Sales()
         {
             number = 0;
@@ -18,24 +19,31 @@ namespace Caffe
             _sales = new List<Cheque>();
         }
 
-        public int OpenCheque()
+        public bool OpenCheque()
         {
             if (isCheckOpen)
-                return 0;
+                return false;
             isCheckOpen = true;
             number++;
-            return number;
+            currentCheque = new Cheque(number);
+            return true;
+        }
+        public void  RegisterChequeItem(String name, double price, double quantity, double summ)
+        {
+            if (summ == 0)
+                return;
+            currentCheque.RegisterChequeItem(name, price, quantity, summ);
         }
        
-        public bool CloseCheque(Cheque newcheque)
+        public bool CloseCheque()
         {
             if (!isCheckOpen)
                 return false;
-            newcheque.RegisterCheque();
-            _sales.Add(newcheque);
+            currentCheque.RegisterCheque();
+            _sales.Add(currentCheque);
             isCheckOpen = false;
             return true;
-
+            currentCheque = null;
         }
         public double GetDayCash()
         {
