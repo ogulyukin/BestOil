@@ -25,32 +25,70 @@ namespace Caffe
         private double _TotalLitres = 0;
         private double _TotalCash = 0;
         private Sales sales;
+        private GoodsList fuelList;
         public MainWindow()
         {
             InitializeComponent();
-            SelectFuel.SelectedIndex = 1;
-            _FuelPrice = 47.5;
             FuelPrice.Text = Convert.ToString(_FuelPrice);
             FuelSumm.IsEnabled = false;
             Litres.IsEnabled = false;
             sales = new Sales();
+            GoodsList list = new();
+            fuelList = new();
+            list = GoodsLoader.GetGoodsList();
+            SetGoodsData(list);
+        }
+        private void SetGoodsData(GoodsList list)
+        {
+            try
+            {
+                Goods01.Text = list.GList.ElementAt(0).Name;
+                Price01.Text = Convert.ToString(list.GList.ElementAt(0).Price);
+                Goods02.Text = list.GList.ElementAt(1).Name;
+                Price02.Text = Convert.ToString(list.GList.ElementAt(1).Price);
+                Goods03.Text = list.GList.ElementAt(2).Name;
+                Price03.Text = Convert.ToString(list.GList.ElementAt(2).Price);
+                Goods04.Text = list.GList.ElementAt(3).Name;
+                Price04.Text = Convert.ToString(list.GList.ElementAt(3).Price);
+                Goods05.Text = list.GList.ElementAt(4).Name;
+                Price05.Text = Convert.ToString(list.GList.ElementAt(4).Price);
+                Goods06.Text = list.GList.ElementAt(5).Name;
+                Price06.Text = Convert.ToString(list.GList.ElementAt(5).Price);
+                Goods07.Text = list.GList.ElementAt(6).Name;
+                Price07.Text = Convert.ToString(list.GList.ElementAt(6).Price);
+                Goods08.Text = list.GList.ElementAt(7).Name;
+                Price08.Text = Convert.ToString(list.GList.ElementAt(7).Price);
+                Goods09.Text = list.GList.ElementAt(8).Name;
+                Price09.Text = Convert.ToString(list.GList.ElementAt(8).Price);
+                Goods10.Text = list.GList.ElementAt(9).Name;
+                Price10.Text = Convert.ToString(list.GList.ElementAt(9).Price);
+                fuelList.GList.Add(new(list.GList.ElementAt(10).Name, list.GList.ElementAt(10).Price));
+                fuelList.GList.Add(new(list.GList.ElementAt(11).Name, list.GList.ElementAt(11).Price));
+                fuelList.GList.Add(new(list.GList.ElementAt(12).Name, list.GList.ElementAt(12).Price));
+                fuelList.GList.Add(new(list.GList.ElementAt(13).Name, list.GList.ElementAt(13).Price));
+                fuelList.GList.Add(new(list.GList.ElementAt(14).Name, list.GList.ElementAt(14).Price));
+                Fuel00.Text = fuelList.GList.ElementAt(0).Name;
+                Fuel01.Text = fuelList.GList.ElementAt(1).Name;
+                Fuel02.Text = fuelList.GList.ElementAt(2).Name;
+                Fuel03.Text = fuelList.GList.ElementAt(3).Name;
+                Fuel04.Text = fuelList.GList.ElementAt(4).Name;
+                SelectFuel.SelectedIndex = 1;
+                ChangeFuelPrice(fuelList.GList.ElementAt(1).Price);
+            }
+            catch
+            {
+                return;
+            }
         }
         
 
         private void SelectFuel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string currentFuel = ((TextBlock)SelectFuel.SelectedItem).Text;
-            switch (currentFuel)
+            foreach(var i in fuelList.GList)
             {
-                case "АИ95":
-                    ChangeFuelPrice(58.3);
-                    break;
-                case "АИ92":
-                    ChangeFuelPrice(47.5);
-                    break;
-                case "ДТ":
-                    ChangeFuelPrice(51.9);
-                    break;
+                if (currentFuel == i.Name)
+                    ChangeFuelPrice(i.Price);
             }
         }
 
