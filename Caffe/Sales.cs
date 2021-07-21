@@ -10,41 +10,65 @@ namespace Caffe
     public class Sales
     {
         private List<Cheque> _sales;
-        private bool isCheckOpen;
-        int number;
-        Cheque currentCheque;
+        private bool _isCheckOpen;
+        private int _number;
+        private Cheque _currentCheque;
+        private CashShift cashShift;
         public Sales()
         {
-            number = 0;
-            isCheckOpen = false;
+            _number = 0;
+            _isCheckOpen = false;
             _sales = new List<Cheque>();
+            cashShift = new();
+            cashShift.IsOpen = false;
+            //todo loading from database
+        }
+        public bool OpenCashShift()
+        {
+            if (cashShift.IsOpen)
+                return false;
+            cashShift.Number = 1; //last number from database have to be here ++
+            cashShift.OpenTime = DateTime.Now;
+            //TODO saving to database and get ID
+            cashShift.Id = 1;
+            cashShift.IsOpen = true;
+            return true;
+        }
+        public bool CloseCashShift()
+        {
+            if (!cashShift.IsOpen)
+                return false;
+            cashShift.CloseTime = DateTime.Now;
+            //TODO saving info to database
+            cashShift.IsOpen = false;
+            return true;
         }
 
         public bool OpenCheque()
         {
-            if (isCheckOpen)
+            if (_isCheckOpen)
                 return false;
-            isCheckOpen = true;
-            number++;
-            currentCheque = new Cheque(number);
+            _isCheckOpen = true;
+            _number++;
+            _currentCheque = new Cheque(_number, cashShift.Id);
             return true;
         }
         public void  RegisterChequeItem(String name, double price, double quantity, double summ)
         {
             if (summ == 0)
                 return;
-            currentCheque.RegisterChequeItem(name, price, quantity, summ);
+            _currentCheque.RegisterChequeItem(name, price, quantity, summ);
         }
        
         public bool CloseCheque()
         {
-            if (!isCheckOpen)
+            if (!_isCheckOpen)
                 return false;
-            currentCheque.RegisterCheque();
-            _sales.Add(currentCheque);
-            isCheckOpen = false;
+            _currentCheque.RegisterCheque();
+            _sales.Add(_currentCheque);
+            _isCheckOpen = false;
+            _currentCheque = null;
             return true;
-            currentCheque = null;
         }
         public double GetDayCash()
         {
@@ -55,6 +79,15 @@ namespace Caffe
             }
             return result;
         }
-
+        public bool GetCashShiftStatus()
+        {
+            if (!cashShift.IsOpen)
+                return false;
+            return true;
+        }
+        public int GetCashShiftNumber()
+        {
+            return cashShift.Number;
+        }
     }
 }

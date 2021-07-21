@@ -8,6 +8,7 @@ namespace Caffe
 {
     public class Cheque
     {
+        private int _cashShiftId;
         private List<SaleItem> _cheque;
         private double _summ;
         private int _number;
@@ -25,11 +26,12 @@ namespace Caffe
         {
             return _summ;
         }
-        public Cheque(int number)
+        public Cheque(int number, int cashShiftId)
         {
             _summ = 0;
             _number = number;
             _cheque = new List<SaleItem>();
+            _cashShiftId = cashShiftId;
         }
     }
 }
