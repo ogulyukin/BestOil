@@ -33,10 +33,16 @@ namespace Caffe
             FuelSumm.IsEnabled = false;
             Litres.IsEnabled = false;
             sales = new Sales();
+            if (sales.GetCashShiftStatus())
+            {
+                CashStatus.Content = "Закрыть смену";
+                CashSviftNumber.Text = Convert.ToString(sales.GetCashShiftNumber());
+            }
             GoodsList list = new();
             fuelList = new();
             list = GoodsLoader.GetGoodsList();
             SetGoodsData(list);
+            TotalCash.Text = Convert.ToString(sales.GetDayCash());
         }
         private void SetGoodsData(GoodsList list)
         {
@@ -135,10 +141,11 @@ namespace Caffe
 
         private void Calculation_Click(object sender, RoutedEventArgs e)
         {
-            if (!sales.GetCashShiftStatus())
+            if (!sales.GetCashShiftStatus() || TotalSumm.Text == "0")
                 return;
             sales.OpenCheque();
-            sales.RegisterChequeItem(((TextBlock)SelectFuel.SelectedItem).Text, _FuelPrice, _TotalLitres, _FuelPrice * _TotalLitres);
+            if (_TotalLitres != 0)
+                sales.RegisterChequeItem(((TextBlock)SelectFuel.SelectedItem).Text, _FuelPrice, Convert.ToDouble(TotalLitres.Text), _FuelPrice * _TotalLitres);
             if (Check01.IsChecked == true)
             {
                 sales.RegisterChequeItem(Goods01.Text, Convert.ToDouble(Price01.Text), Convert.ToDouble(Quant01.Text), Convert.ToDouble(Price01.Text) * Convert.ToDouble(Quant01.Text));

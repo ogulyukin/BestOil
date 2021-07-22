@@ -11,6 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="cash.mdf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="cash.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="cash_log.ldf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="Goods.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

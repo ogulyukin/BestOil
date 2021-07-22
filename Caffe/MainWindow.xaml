@@ -105,9 +105,9 @@
         <TextBlock x:Name="Static19" Text="Сумма чека" Grid.Row="16" Grid.Column="1" TextAlignment="Center"/>
         <TextBlock x:Name="Static20" Text="Топливо к выдаче:" Grid.Row="16" Grid.Column="2" TextAlignment="Center"/>
         <TextBlock x:Name="Static21" Text="Продажи за смену" Grid.Row="16" Grid.Column="4" TextAlignment="Center"/>
-        <TextBlock x:Name="TotalSumm" Text="0.00" Grid.Row="17" Grid.Column="1" TextAlignment="Center" FontSize="22"/>
-        <TextBlock x:Name="TotalLitres" Text="0.00" Grid.Row="17" Grid.Column="2" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="TotalSumm" Text="0" Grid.Row="17" Grid.Column="1" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="TotalLitres" Text="0" Grid.Row="17" Grid.Column="2" TextAlignment="Center" FontSize="22"/>
         <Button x:Name="Calculation" Content="Оформить покупку" Grid.Row="17" Grid.Column="3" FontSize="14" Click="Calculation_Click"/>
-        <TextBlock x:Name="TotalCash" Text="0.00" Grid.Row="17" Grid.Column="4" TextAlignment="Center" FontSize="22"/>
+        <TextBlock x:Name="TotalCash" Text="0" Grid.Row="17" Grid.Column="4" TextAlignment="Center" FontSize="22"/>
     </Grid>
 </Window>
