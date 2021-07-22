@@ -108,6 +108,7 @@ namespace Caffe
             command.ExecuteNonQuery();
             db.Close();
             cashShift.IsOpen = false;
+            _sales.Clear();
             return true;
         }
 
