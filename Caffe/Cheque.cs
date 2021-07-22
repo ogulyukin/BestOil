@@ -8,9 +8,12 @@ namespace Caffe
 {
     public class Cheque
     {
+        public int ChequeId { get; set; }
+        private int _cashShiftId;
         private List<SaleItem> _cheque;
         private double _summ;
         private int _number;
+        private DateTime _dateTime;
         public void RegisterChequeItem(String name, double price, double quantity, double summ)
         {
             SaleItem newSale = new(name, price, quantity, summ);
@@ -25,11 +28,17 @@ namespace Caffe
         {
             return _summ;
         }
-        public Cheque(int number)
+        public Cheque(int number, int cashShiftId, DateTime dateTime)
         {
             _summ = 0;
             _number = number;
             _cheque = new List<SaleItem>();
+            _cashShiftId = cashShiftId;
+            _dateTime = dateTime;
+        }
+        public DateTime GetChequeDateTime()
+        {
+            return _dateTime;
         }
     }
 }
