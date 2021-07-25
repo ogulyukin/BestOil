@@ -142,7 +142,10 @@ namespace Caffe
         private void Calculation_Click(object sender, RoutedEventArgs e)
         {
             if (!sales.GetCashShiftStatus() || TotalSumm.Text == "0")
+            {
+                MessageBox.Show("Кассовая смена не открыта!");
                 return;
+            }
             sales.OpenCheque();
             if (_TotalLitres != 0)
                 sales.RegisterChequeItem(((TextBlock)SelectFuel.SelectedItem).Text, _FuelPrice, Convert.ToDouble(TotalLitres.Text), _FuelPrice * _TotalLitres);
