@@ -309,6 +309,9 @@ namespace Caffe
                 sales.CloseCashShift();//add check and error message here in case
                 CashStatus.Content = "Открыть смену";
                 CashSviftNumber.Text = "---";
+                _TotalCash = sales.GetDayCash();
+                ClearAllFuel(0);
+                TotalCash.Text = Convert.ToString(_TotalCash);
             }
         }
 
